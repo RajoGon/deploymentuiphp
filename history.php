@@ -10,7 +10,7 @@ if($_SESSION["connection"]=="disconnected"){
 }
 
 // Fetching history
-$history = " SELECT * FROM dbo.USER_DEPLOYMENT ";
+$history = " SELECT * FROM dbo.USER_DEPLOYMENT   ORDER BY ID DESC ";
 $historystmt = sqlsrv_query( $conn, $history );
 if( $historystmt === false) {
     die( print_r( sqlsrv_errors(), true) );
